@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Madhu Test",
+    "email": "madhu.test@example.com",
+    "phone": "",
+    "company": "",
+    "service": "Website development",
+    "budget": "",
+    "details": "We need a new website for a Salem retail shop, with a catalog and a clear way for customers to enquire.",
+    "id": "bd990e79-c3a2-444c-a54c-a725c274f4ab",
+    "createdAt": "2026-10-09T09:40:15.945Z",
+    "status": "new"
+  }
+]
