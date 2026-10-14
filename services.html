@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Capabilities | MintX Solutions</title>
+  <meta name="description" content="Explore MintX Solutions' capabilities: Custom website development, e-commerce platforms, mobile apps, and digital marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-pill-container">
+      <a href="index.html" class="logo-wrap" aria-label="MintX Solutions - Digital Studio">
+        <img src="public/brand/logo_tight.png" alt="MintX Solutions" class="logo-img" width="311" height="58">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="work.html" class="nav-link">Selected Work</a>
+        <a href="process.html" class="nav-link">Process</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+      </nav>
+
+      <a href="contact.html" class="nav-pill-cta">Start a Project →</a>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="services.html" class="mobile-nav-link" style="color: var(--mint);">Services</a>
+    <a href="work.html" class="mobile-nav-link">Selected Work</a>
+    <a href="process.html" class="mobile-nav-link">Process</a>
+    <a href="about.html" class="mobile-nav-link">About Us</a>
+    <a href="careers.html" class="mobile-nav-link">Careers</a>
+    <a href="contact.html" class="mobile-nav-link" style="color: var(--mint);">Start a Project →</a>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-hero" style="padding-top: 140px; padding-bottom: 60px; background: radial-gradient(circle at 50% 0%, #f0fdf9 0%, #ffffff 80%); border-bottom: 1px solid var(--slate-100);">
+      <div class="container">
+        <div class="badge-mint">
+          <span class="badge-dot"></span>
+          <span>Core Capabilities & Practices</span>
+        </div>
+        <h1 class="display" style="font-size: 3.2rem; margin-top: 16px; margin-bottom: 16px; max-width: 900px; color: var(--slate-900);">
+          Engineering Digital Systems That Generate Real Commercial Growth.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--slate-600); max-width: 720px; line-height: 1.7;">
+          Every project is built with zero-bloat code, sub-second load speeds, accessible typography, and frictionless conversion paths to turn web visits into revenue.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Detailed Breakdown -->
+    <section class="section">
+      <div class="container" style="display: flex; flex-direction: column; gap: 48px;">
+        
+        <!-- Service 1: Website Development -->
+        <div class="double-bezel-light lead-service-card" style="margin-bottom: 0;">
+          <div class="double-bezel-light-inner lead-service-inner">
+            <div>
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mint-deep);">
+                01 · Flagship Capability
+              </span>
+              <h2 class="display" style="font-size: 2.3rem; margin: 12px 0 16px; color: #0B1220;">Custom Website Development</h2>
+              <p style="color: var(--slate-600); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
+                A MintX website is planned around what your business needs visitors to do: call, book, buy, or enquire. We design the page structure, write a bespoke visual design system, and build a responsive site that stays blazing fast on mobile connections.
+              </p>
+              <ul style="list-style: none; padding: 0; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--slate-700);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Semantic on-page SEO & Google Core Web Vitals optimization</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> 100% responsive fluid mobile layouts</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Direct WhatsApp & high-converting call-to-action triggers</li>
+              </ul>
+              <a href="contact.html?service=website" class="btn btn-primary">Inquire About Website Build →</a>
+            </div>
+            <div class="lead-service-media">
+              <img src="public/visuals/service-web.jpg" alt="MintX Web Development Showcase" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80'">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: E-Commerce Development -->
+        <div class="double-bezel-light lead-service-card" style="margin-bottom: 0;">
+          <div class="double-bezel-light-inner lead-service-inner" style="grid-template-columns: 7fr 5fr;">
+            <div class="lead-service-media" style="order: 2;">
+              <img src="public/visuals/service-commerce.jpg" alt="E-commerce development" onerror="this.src='https://images.unsplash.com/photo-1556742049-0a67e55722c0?w=800&auto=format&fit=crop&q=80'">
+            </div>
+            <div style="order: 1;">
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mint-deep);">
+                02 · Commerce Engine
+              </span>
+              <h2 class="display" style="font-size: 2.3rem; margin: 12px 0 16px; color: #0B1220;">E-Commerce Development</h2>
+              <p style="color: var(--slate-600); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
+                Online stores with streamlined product catalogs, frictionless checkout flows, and practical ways to manage daily inventory and fulfillment.
+              </p>
+              <ul style="list-style: none; padding: 0; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--slate-700);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Secure Razorpay, Stripe, UPI & net banking integrations</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Intuitive dashboard for live inventory and order tracking</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Fast mobile checkout to eliminate cart abandonment</li>
+              </ul>
+              <a href="contact.html?service=ecommerce" class="btn btn-primary">Start Your Online Store →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Mobile App Development -->
+        <div class="double-bezel-light lead-service-card" style="margin-bottom: 0;">
+          <div class="double-bezel-light-inner lead-service-inner">
+            <div>
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mint-deep);">
+                03 · Mobile Applications
+              </span>
+              <h2 class="display" style="font-size: 2.3rem; margin: 12px 0 16px; color: #0B1220;">Mobile App Development</h2>
+              <p style="color: var(--slate-600); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
+                We design and build iOS and Android mobile applications shaped for daily practical use, engineered with responsive APIs and Room for rapid scaling.
+              </p>
+              <ul style="list-style: none; padding: 0; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--slate-700);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Flutter & React Native cross-platform performance</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Offline sync capabilities & low-latency cloud backend</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> App Store & Google Play Store release management</li>
+              </ul>
+              <a href="contact.html?service=mobile" class="btn btn-primary">Discuss Mobile Application →</a>
+            </div>
+            <div class="lead-service-media">
+              <img src="public/visuals/mintxqr-phone.jpg" alt="Mobile app development showcase" onerror="this.src='https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80'">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Digital Marketing & SEO -->
+        <div class="double-bezel-light lead-service-card" style="margin-bottom: 0;">
+          <div class="double-bezel-light-inner lead-service-inner" style="grid-template-columns: 7fr 5fr;">
+            <div class="lead-service-media" style="order: 2;">
+              <img src="public/visuals/service-marketing.jpg" alt="Digital marketing and SEO" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80'">
+            </div>
+            <div style="order: 1;">
+              <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mint-deep);">
+                04 · Growth & Visibility
+              </span>
+              <h2 class="display" style="font-size: 2.3rem; margin: 12px 0 16px; color: #0B1220;">Digital Marketing & SEO</h2>
+              <p style="color: var(--slate-600); font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
+                Search optimization, content strategy, and social ad campaigns planned specifically to support inbound enquiries, not vanity charts.
+              </p>
+              <ul style="list-style: none; padding: 0; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: var(--slate-700);">
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Local SEO and Google Business Profile rank optimization</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> High-ROI Meta & Google Ads targeted for local markets</li>
+                <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--mint); font-weight: bold;">✓</span> Transparent monthly analytics reporting on real leads</li>
+              </ul>
+              <a href="contact.html?service=marketing" class="btn btn-primary">Get a Marketing Audit →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Call to Action Band -->
+    <section class="section" style="background: var(--midnight); color: #ffffff; text-align: center;">
+      <div class="container" style="max-width: 800px;">
+        <div class="badge-dark">Ready To Grow?</div>
+        <h2 class="display" style="font-size: 2.8rem; margin: 16px 0 12px; color: #ffffff;">Let's Build Your Digital Solution</h2>
+        <p style="color: var(--slate-400); font-size: 1.1rem; margin-bottom: 32px;">
+          Whether you need a full enterprise website, an online store, or a custom app, we deliver on time and with zero compromise on quality.
+        </p>
+        <a href="contact.html" class="btn-pill-mint">
+          <span>Start a Project Consultation</span>
+          <span class="icon-pill">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div>
+        <h3 class="display" style="font-size: 1.6rem; color: #ffffff; margin-bottom: 14px;">
+          Mint<span style="color: var(--mint-accent);">X</span> Solutions
+        </h3>
+        <p style="color: var(--slate-400); max-width: 400px; font-size: 0.95rem; line-height: 1.65;">
+          Next-generation digital atelier in Salem, Tamil Nadu. Engineering high-performance web platforms, custom applications, and bespoke digital experiences across India.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="footer-nav-col">
+          <div class="footer-nav-title">Navigation</div>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="work.html" class="footer-link">Selected Work</a>
+          <a href="process.html" class="footer-link">Process</a>
+          <a href="about.html" class="footer-link">About Us</a>
+        </div>
+        <div class="footer-nav-col">
+          <div class="footer-nav-title">Connect</div>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+          <a href="https://wa.me/919487058025" target="_blank" rel="noreferrer" class="footer-link">WhatsApp Direct</a>
+          <a href="https://www.instagram.com/mintxsolutions" target="_blank" rel="noreferrer" class="footer-link">Instagram</a>
+          <a href="careers.html" class="footer-link">Careers</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-nav-title">Studio Headquarters</div>
+        <p style="color: #ffffff; font-weight: 600; margin-bottom: 8px;">Salem, Tamil Nadu, India</p>
+        <a href="mailto:mintxsolution@gmail.com" class="footer-link" style="color: var(--mint-accent); display: block; margin-bottom: 8px; font-weight:600;">
+          mintxsolution@gmail.com
+        </a>
+        <a href="tel:+919487058025" class="footer-link" style="font-weight: 600;">
+          +91 94870 58025
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 MintX Solutions. Crafted with precision for high-performance businesses.</p>
+        <p><span style="color: var(--mint-accent);">Fast</span> • Accessible • Bespoke</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
