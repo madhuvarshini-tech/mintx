@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { Content } from "@/lib/types";
 
 export const processSteps = [
@@ -251,3 +252,258 @@ export const seedContent: Content = {
 export function published<T extends { published: boolean }>(items: T[]) {
   return items.filter((item) => item.published);
 }
+=======
+import type { Content } from "@/lib/types";
+
+export const processSteps = [
+  {
+    n: "01",
+    title: "Discover",
+    text: "Deep-dive into business objectives, technical constraints, user expectations, and commercial market landscape.",
+  },
+  {
+    n: "02",
+    title: "Define",
+    text: "Map information architecture, technical specifications, conversion milestones, and system requirements.",
+  },
+  {
+    n: "03",
+    title: "Design",
+    text: "Craft bespoke digital atelier interfaces with responsive layouts, typographic hierarchy, and micro-motion prototypes.",
+  },
+  {
+    n: "04",
+    title: "Develop",
+    text: "Engineer scalable, zero-bloat code with modern full-stack frameworks, clean APIs, and lightning-fast rendering.",
+  },
+  {
+    n: "05",
+    title: "Deliver",
+    text: "Rigorous cross-device testing, SEO indexing, sub-second performance audits, and high-availability deployment.",
+  },
+] as const;
+
+export const budgetOptions = [
+  "Not sure yet",
+  "Under ₹50,000",
+  "₹50,000 to ₹1,50,000",
+  "₹1,50,000 to ₹5,00,000",
+  "Above ₹5,00,000",
+] as const;
+
+export const seedContent: Content = {
+  settings: {
+    email: "mintxsolution@gmail.com",
+    phoneDisplay: "+91 94870 58025",
+    phoneTel: "+919487058025",
+    whatsapp: "https://wa.me/919487058025",
+    instagram: "https://www.instagram.com/mintxsolutions",
+    instagramHandle: "@mintxsolutions",
+    location: "Salem, Tamil Nadu",
+  },
+  services: [
+    {
+      slug: "website-development",
+      title: "Website development",
+      summary: "Custom, responsive websites built around a business goal. Fast to use, clear to read, and ready for search.",
+      body: [
+        "A MintX website is planned around what the business needs visitors to do: call, book, buy, or enquire.",
+        "We design the page structure, write a visual system, and build a responsive site that stays quick on a phone.",
+        "The work includes layout, basic on-page SEO, and a contact path that actually reaches the business.",
+      ],
+      image: "/visuals/service-web.jpg",
+      imageAlt: "Studio photograph of a laptop on a dark desk, used as the visual for website development.",
+      published: true,
+    },
+    {
+      slug: "ecommerce-development",
+      title: "E-commerce development",
+      summary: "Online stores with product catalogs, checkout, and a practical way to manage inventory.",
+      body: [
+        "We build stores for businesses that need products, prices, and orders in one place.",
+        "The storefront covers catalogs, checkout, and the day-to-day work of updating stock.",
+        "Payment setup follows the gateway the business chooses. We do not invent a processor or a rate.",
+      ],
+      image: "/visuals/service-commerce.jpg",
+      imageAlt: "Still life of product boxes and a tablet on a dark table, used as the visual for online stores.",
+      published: true,
+    },
+    {
+      slug: "mobile-app-development",
+      title: "Mobile app development",
+      summary: "Mobile applications shaped for daily use, with room to grow after the first release.",
+      body: [
+        "We design and build apps for iOS and Android, including cross-platform builds when one codebase is the right call.",
+        "The interface is planned for thumbs, slow networks, and the job the app has to finish.",
+        "Scope, platforms, and integrations are agreed before build, not assumed.",
+      ],
+      image: "/visuals/mintxqr-phone.jpg",
+      imageAlt: "A phone on a dark surface showing a blurred menu interface, used as the visual for mobile apps.",
+      published: true,
+    },
+    {
+      slug: "digital-marketing",
+      title: "Digital marketing and SEO",
+      summary: "Search, content, and social work planned to support enquiries, not vanity charts.",
+      body: [
+        "We help businesses get found and stay clear: search optimisation, content, social campaigns, and paid media when it fits.",
+        "The plan starts from the offer and the city or market you actually serve.",
+        "We report the work that was done. We do not promise a traffic number we cannot stand behind.",
+      ],
+      image: "/visuals/service-marketing.jpg",
+      imageAlt: "Dim studio desk with unreadable charts and a notebook, used as the visual for marketing work.",
+      published: true,
+    },
+  ],
+  product: {
+    slug: "mintxqr",
+    name: "MintxQR",
+    url: "https://mintxqr.site",
+    summary: "A digital menu and QR ordering system for restaurants and hotels.",
+    problem: "Paper menus go out of date, and table orders depend on a waiter being free.",
+    solution: "MintxQR lets the business publish a digital menu, print a QR code for a table, and take the order from the guest's phone.",
+    features: [
+      { title: "Digital menus", text: "Create and update items, prices, and categories from the business login." },
+      { title: "Table QR codes", text: "Generate a code for a table so a guest can open that menu." },
+      { title: "Phone ordering", text: "Guests scan, browse, and place an order from their own phone." },
+      { title: "Subscriptions", text: "Hotel and restaurant owners sign in on a subscription plan." },
+    ],
+    steps: [
+      "The owner subscribes and signs in.",
+      "They add menu items and prices.",
+      "They generate QR codes for tables.",
+      "Guests scan a code and place an order.",
+    ],
+    image: "/visuals/mintxqr-phone.jpg",
+    imageAlt: "Phone photograph used to illustrate MintxQR, a digital menu product. The screen text is intentionally unreadable.",
+  },
+  projects: [
+    { slug: "roadminded-safety-solutions", name: "Roadminded Safety Solutions", url: "https://www.roadmindedsafetysolutions.com/", category: "Business website", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "suriyan-global", name: "Suriyan Global", url: "https://www.suriyanglobal.com/", category: "Business website", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "feathers-consultancy", name: "Feathers Consultancy", url: "https://www.feathersconsultancy.in/", category: "Consultancy", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "sky-harbor-export", name: "Sky Harbor Export", url: "https://skyharborexport.vercel.app/", category: "Export", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "terragrox-global", name: "Terragrox Global", url: "https://www.terragroxglobal.com/", category: "Business website", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "anjar-foods", name: "Anjar Foods", url: "https://www.anjarfoods.com/", category: "Food", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "scallops-fincorp", name: "Scallops Fincorp", url: "https://www.scallopsfincorp.com/", category: "Finance", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "anaimalai-nature-safari", name: "Anaimalai Nature Safari", url: "https://www.anaimalainaturesafari.in/", category: "Tourism", image: null, imageAlt: null, summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "alpha-tax-consultant", name: "Alpha Tax Consultant", url: "http://alphatax.in/", category: "Tax", image: "/work/alpha-tax.jpeg", imageAlt: "Alpha Tax Consultant logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "freelancemaker", name: "Freelancemaker", url: "https://www.freelancemaker.in/", category: "Business website", image: "/work/freelancemaker.jpeg", imageAlt: "Freelancemaker logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "ezhil-construction", name: "Ezhil Construction", url: "https://ezhilconstruction.vercel.app/", category: "Construction", image: "/work/ezhil.png", imageAlt: "Ezhil Construction logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "black-sea-education", name: "Black Sea Education", url: "https://blackseaeducation.com/", category: "Education", image: "/work/black-sea.png", imageAlt: "Black Sea Education logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "ooty-travel-solutions", name: "Ooty Travel Solutions", url: "https://ootytravelsolutions.vercel.app/", category: "Travel", image: "/work/ooty.png", imageAlt: "Ooty Travel Solutions logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "kenxe-car-wash", name: "Kenxe Car Wash", url: "https://kenxe.vercel.app/", category: "Automotive", image: "/work/kenxe.png", imageAlt: "Kenxe Car Wash logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "vihar-organics", name: "Vihar Organics", url: "https://viharorganics.vercel.app/", category: "Organics", image: "/work/vihar.png", imageAlt: "Vihar Organics logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "anicham-events", name: "Anicham Events", url: "https://www.anichamevents.com/", category: "Events", image: "/work/anicham.png", imageAlt: "Anicham Events logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "la-tech", name: "LA TECH", url: "https://latechrebarsolutions.com", category: "Construction materials", image: "/work/latech.png", imageAlt: "LA TECH logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "prism-land-surveyors", name: "Prism Land Surveyors", url: "https://www.prismlandsurveyors.in", category: "Surveying", image: "/work/prism.png", imageAlt: "Prism Land Surveyors logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "sri-gokulam-global-exim", name: "Sri Gokulam Global Exim", url: "https://srigokulamglobalexim.vercel.app", category: "Export", image: "/work/gokulam.png", imageAlt: "Sri Gokulam Global Exim logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "rate-2-gold", name: "Rate 2 Gold Financial Service", url: "https://r2goldfinancialservice.vercel.app", category: "Financial services", image: "/work/rate2gold.png", imageAlt: "Rate 2 Gold logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+    { slug: "kts-aquarium", name: "KTS Aquarium & Exotic Pets", url: null, category: "Retail", image: "/work/kts.jpg", imageAlt: "KTS Aquarium and Exotic Pets logo", summary: "Website developed by MintX Solutions.", linkNote: "The public link did not respond when this site was built, so it is not shown.", published: true },
+    { slug: "sree-sai-construction", name: "Sree Sai Construction", url: "https://sreesaiconstructions.vercel.app", category: "Construction", image: "/work/sree-sai.png", imageAlt: "Sree Sai Construction logo", summary: "Website developed by MintX Solutions.", linkNote: null, published: true },
+  ],
+  posts: [
+    {
+      slug: "why-website-is-important-for-business",
+      title: "Why a website is important for your business in 2026",
+      date: "2026-05-05",
+      published: true,
+      paragraphs: [
+        "Having a website is no longer optional. Whether you run a small shop, a startup, or a larger company, a website plays a direct role in how people find you and decide to trust you.",
+        "A professional website makes a business look legitimate. People search before they call. If they cannot find you, they often move on.",
+        "Unlike a shop with fixed hours, a website can be read at any time. Customers can look through services or products after you have closed for the day.",
+        "A website also extends reach past the street you are on. With search set up properly, people in other cities can find the same business.",
+        "Compared with many traditional ads, a website is a practical place to keep your offer, your work, and your contact details together.",
+        "Contact forms and social links give people a way to reach you without waiting on a phone line.",
+        "The site is also the showroom: services, portfolio, and the next step you want a visitor to take.",
+        "Many businesses are already online. A clear website is how you stay in that conversation.",
+      ],
+    },
+  ],
+  roles: [
+    {
+      slug: "project-coordinator-intern",
+      title: "Project Coordinator (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-09-21",
+      summary: "Coordinate project activities, track tasks and deadlines, communicate with the team and clients, and keep projects moving on time. You should be organised, clear in communication, and comfortable with basic technical tools.",
+      skills: ["Project planning and task management", "Basic knowledge of software development", "Team and client coordination", "Time and deadline management", "Communication", "MS Office or Google Workspace", "Basic Git, Jira, or Trello is useful"],
+      published: true,
+    },
+    {
+      slug: "ai-developer-intern",
+      title: "AI Developer (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-09-21",
+      summary: "Internship for someone who can work with Python, machine learning tools, and practical AI integrations.",
+      skills: ["Python", "Machine learning and AI", "REST APIs and AI API integration", "NumPy and Pandas", "TensorFlow or PyTorch", "LLMs and prompt work", "Git and GitHub"],
+      published: true,
+    },
+    {
+      slug: "app-developer-intern",
+      title: "App Developer (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-09-21",
+      summary: "Build mobile app features with a cross-platform toolkit and a real API behind them.",
+      skills: ["Flutter or React Native", "Dart or JavaScript", "REST API integration", "Firebase or MySQL", "Git and GitHub", "Basic Android or iOS knowledge"],
+      published: true,
+    },
+    {
+      slug: "video-editor-intern",
+      title: "Video Editor (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-03-12",
+      summary: "Edit video with attention to color, transitions, and audio sync.",
+      skills: ["Video editing", "Color correction", "Transitions and audio sync", "Adobe Premiere Pro, Final Cut Pro, or CapCut"],
+      published: true,
+    },
+    {
+      slug: "social-media-manager-intern",
+      title: "Social Media Manager (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-03-12",
+      summary: "Create content, post it, and pay attention to how people respond.",
+      skills: ["Content creation", "Social media marketing", "Audience engagement", "Instagram, Facebook, and LinkedIn"],
+      published: true,
+    },
+    {
+      slug: "full-stack-developer-intern",
+      title: "Full Stack Developer (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-03-12",
+      summary: "Build complete web applications across the interface, the server, and the database.",
+      skills: ["HTML, CSS, and JavaScript", "Python and PHP", "Backend development", "MySQL"],
+      published: true,
+    },
+    {
+      slug: "ui-ux-designer-intern",
+      title: "UI/UX Designer (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-03-12",
+      summary: "Shape interfaces through wireframes, prototypes, and visual design.",
+      skills: ["Interface and experience design", "Wireframing and prototyping", "Visual design", "Figma, Adobe XD, or Canva"],
+      published: true,
+    },
+    {
+      slug: "front-end-developer-intern",
+      title: "Front End Developer (Intern)",
+      type: "Internship",
+      location: "Salem",
+      posted: "2026-03-12",
+      summary: "Build responsive interfaces with HTML, CSS, and JavaScript.",
+      skills: ["HTML, CSS, and JavaScript", "Responsive layout", "React or Bootstrap", "Git"],
+      published: true,
+    },
+  ],
+};
+
+export function published<T extends { published: boolean }>(items: T[]) {
+  return items.filter((item) => item.published);
+}
+>>>>>>> 23694d815d194957a50633911c429caf59c439b9

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/site";
 
@@ -7,3 +8,14 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${siteUrl()}/sitemap.xml`,
   };
 }
+=======
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: { userAgent: "*", allow: "/", disallow: ["/admin", "/api"] },
+    sitemap: `${siteUrl()}/sitemap.xml`,
+  };
+}
+>>>>>>> 23694d815d194957a50633911c429caf59c439b9
