@@ -2479,6 +2479,38 @@ button, input, textarea, select {
    COMPREHENSIVE MOBILE VIEWPORT OPTIMIZATIONS (<= 768px & <= 480px)
    ========================================================= */
 @media (max-width: 768px) {
+  /* Global Page Layout & Rhythm */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Section Headings */
+  .section-head {
+    margin-bottom: 26px !important;
+  }
+
+  .section-head h2,
+  .section-head .display {
+    font-size: 1.85rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .section-head p {
+    font-size: 0.94rem !important;
+    line-height: 1.55 !important;
+  }
+
   /* 1. Header Pill Container & Navigation */
   .site-header {
     top: 8px;
@@ -2529,6 +2561,10 @@ button, input, textarea, select {
     margin-bottom: 16px;
   }
 
+  .hero-main-title br {
+    display: none;
+  }
+
   .hero-subtitle {
     font-size: 0.95rem;
     line-height: 1.6;
@@ -2539,7 +2575,7 @@ button, input, textarea, select {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .btn-hero-primary,
@@ -2551,21 +2587,45 @@ button, input, textarea, select {
 
   /* 3. Hero Stats Row on Mobile */
   .hero-stats-row {
-    flex-wrap: wrap;
-    gap: 16px;
-    padding-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding-top: 14px;
   }
 
   .hero-stat-badge {
-    min-width: calc(50% - 12px);
+    width: auto !important;
+    min-width: 0 !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    padding: 10px 4px;
+    background: #F8FAFC;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.05);
+  }
+
+  .stat-icon-box {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stat-icon-box svg {
+    width: 15px;
+    height: 15px;
   }
 
   .hero-stat-num {
-    font-size: 1.18rem;
+    font-size: 1.05rem;
+    font-weight: 800;
   }
 
   .hero-stat-label {
-    font-size: 0.6rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    text-align: center;
   }
 
   /* 4. Hero Device Mockup on Mobile */
@@ -2589,6 +2649,10 @@ button, input, textarea, select {
     image-rendering: crisp-edges !important;
   }
 
+  .scroll-explore-bar {
+    padding: 16px 0 6px;
+  }
+
   /* 5. Clients & Trust Bar */
   .trust-bar-section {
     padding: 16px 0 20px;
@@ -2608,37 +2672,256 @@ button, input, textarea, select {
 
   /* 6. Lead Service & Capabilities Cards */
   .lead-service-inner {
-    padding: 24px 20px;
+    padding: 22px 18px;
+    gap: 20px;
   }
 
   .lead-service-inner h2,
   .lead-service-inner h3 {
-    font-size: 1.65rem !important;
+    font-size: 1.55rem !important;
+    margin: 10px 0 !important;
+  }
+
+  .lead-service-inner p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
   }
 
   .lead-service-media {
     height: 200px;
   }
 
-  /* 7. Selected Works Marquee Cards on Mobile */
-  .works-marquee-group .double-bezel-light {
-    width: 290px;
-    min-width: 290px;
-    max-width: 290px;
-    min-height: 260px;
+  .services-grid {
+    gap: 16px;
   }
 
-  .project-card-inner {
-    padding: 20px 22px;
+  .service-card-inner {
+    padding: 22px 18px;
+  }
+
+  .service-card-inner h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .service-card-inner p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* 7. Selected Works Section & Marquee on Mobile */
+  #projects .section-head {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+
+  #projects .section-head > div:last-child,
+  #projects .section-head a.btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
   }
 
   .showcase-nav-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 12px;
+    margin-top: 18px;
   }
 
-  /* 8. Careers Page Mobile Optimizations */
+  .showcase-controls {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .showcase-controls .showcase-btn {
+    flex: 1;
+    justify-content: center;
+    height: 40px;
+    font-size: 0.82rem;
+  }
+
+  .works-marquee-wrapper {
+    padding: 16px 0 24px;
+  }
+
+  .works-marquee-group .double-bezel-light {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 250px;
+  }
+
+  .project-card-inner {
+    padding: 18px 18px;
+  }
+
+  .project-card-inner h3 {
+    font-size: 1.2rem;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  .project-card-inner p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* 8. Process Section (Execution Framework) */
+  #process {
+    padding: 52px 0;
+  }
+
+  #process .section-head {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+
+  #process .section-head > div:last-child,
+  #process .section-head a.btn {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .process-grid {
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .process-step-inner {
+    padding: 18px 18px;
+  }
+
+  .process-step-inner .step-num {
+    font-size: 1.65rem;
+  }
+
+  .process-step-inner h3 {
+    font-size: 1.15rem !important;
+    margin: 6px 0 !important;
+  }
+
+  .process-step-inner p {
+    font-size: 0.85rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .step-bar {
+    margin-top: 14px;
+  }
+
+  /* 9. Proprietary Software Product (MintxQR) */
+  #products {
+    padding: 52px 0;
+  }
+
+  .product-grid {
+    gap: 28px;
+  }
+
+  #products h2.display {
+    font-size: 2.2rem !important;
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #products p {
+    font-size: 0.94rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+
+  #products .btn-pill-mint,
+  #products .btn-pill-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-media-wrap {
+    max-height: 340px;
+  }
+
+  /* 10. Why Choose MintX Section */
+  #why-us {
+    padding: 52px 0;
+  }
+
+  .why-grid {
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .why-card {
+    padding: 20px 18px;
+  }
+
+  .why-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .why-card p {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  /* 11. Contact CTA Section */
+  #contact {
+    padding: 52px 0;
+  }
+
+  .contact-grid {
+    gap: 28px;
+  }
+
+  #contact h2.display {
+    font-size: 1.95rem !important;
+    line-height: 1.2 !important;
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #contact p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .contact-info-card {
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+
+  .contact-info-label {
+    font-size: 0.72rem;
+  }
+
+  #contact .double-bezel-light-inner {
+    padding: 22px 18px !important;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 10px 14px;
+    font-size: 0.92rem;
+  }
+
+  #contact button[type="submit"] {
+    min-height: 48px !important;
+    font-size: 0.98rem !important;
+  }
+
+  /* 12. Careers Page Mobile Optimizations */
   .page-hero {
     padding-top: 96px !important;
     padding-bottom: 40px !important;
@@ -2679,7 +2962,7 @@ button, input, textarea, select {
     font-size: 1.5rem !important;
   }
 
-  /* 9. Interactive Demo Widget on Mobile */
+  /* 13. Interactive Demo Widget on Mobile */
   .demo-wrapper {
     padding: 28px 20px;
     gap: 28px;
@@ -2702,20 +2985,38 @@ button, input, textarea, select {
     font-size: 0.8rem;
   }
 
-  /* 10. Footer on Mobile */
+  /* 14. Footer on Mobile */
+  .site-footer {
+    padding-top: 52px;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
+    padding-bottom: 36px;
+  }
+
+  .footer-bottom {
+    padding: 20px 0;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 0.78rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-main-title {
-    font-size: 2.05rem;
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  .hero-stat-badge {
-    width: 100%;
+  .hero-main-title {
+    font-size: 2.15rem;
+    line-height: 1.12;
   }
 
   .careers-stats-grid {
@@ -4053,32 +4354,94 @@ button, input, textarea, select {
 /* Mobile & Tablet Responsiveness */
 @media (max-width: 480px) {
   .mintx-chatbot-root {
-    bottom: 0;
-    right: 0;
+    bottom: 16px;
+    right: 16px;
   }
+
+  .chatbot-robot-trigger {
+    width: 72px;
+    height: 72px;
+  }
+
+  .robot-trigger-avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  .robot-trigger-halo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .chatbot-speech-bubble {
+    padding: 8px 14px 8px 16px;
+    margin-bottom: 8px;
+    margin-right: 2px;
+    border-radius: 14px;
+    gap: 10px;
+    max-width: calc(100vw - 36px);
+  }
+
+  .chatbot-bubble-text {
+    font-size: 0.84rem;
+  }
+
+  .chatbot-bubble-close {
+    width: 20px;
+    height: 20px;
+  }
+
   .chatbot-window {
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
-    border-radius: 0;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    z-index: 100000 !important;
   }
+
+  .chatbot-header {
+    padding: 14px 16px;
+  }
+
   .chatbot-welcome-panel {
     flex-direction: column;
     text-align: center;
     padding: 14px 12px;
     margin: 10px 10px 14px;
   }
+
   .chatbot-welcome-divider {
     width: 80%;
     height: 1px;
     background: linear-gradient(90deg, transparent 0%, rgba(0, 210, 180, 0.45) 20%, rgba(0, 210, 180, 0.45) 80%, transparent 100%);
     margin: 12px 0;
   }
+
   .chatbot-welcome-content {
     align-items: center;
+  }
+
+  .chatbot-footer {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .chatbot-input {
+    height: 42px;
+    font-size: 0.86rem;
+    padding: 0 16px;
+  }
+
+  .chatbot-send-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
   }
 }
 
