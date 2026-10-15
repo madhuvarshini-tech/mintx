@@ -395,12 +395,22 @@ document.addEventListener('DOMContentLoaded', () => {
     chatbotRoot.id = 'mintxChatbotRoot';
 
     chatbotRoot.innerHTML = `
-      <!-- Floating Trigger Button -->
-      <button type="button" class="chatbot-trigger-btn" id="chatbotTriggerBtn" aria-label="Chat with MintX AI" aria-expanded="false">
-        <span class="chatbot-tooltip">Chat with MintX AI</span>
-        <svg class="chatbot-trigger-icon" id="chatbotIconOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
+      <!-- Floating Speech Bubble Popup ("How can I help you?") -->
+      <div class="chatbot-speech-bubble" id="chatbotSpeechBubble" role="dialog" aria-label="Greeting popup">
+        <span class="chatbot-bubble-text" id="chatbotBubbleText">How can I help you?</span>
+        <button type="button" class="chatbot-bubble-close" id="chatbotBubbleClose" aria-label="Close greeting" title="Dismiss">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="chatbot-bubble-tail" aria-hidden="true"></div>
+      </div>
+
+      <!-- Floating 3D Robot Launcher Button -->
+      <button type="button" class="chatbot-robot-trigger" id="chatbotTriggerBtn" aria-label="Open MintX AI Chatbot" aria-expanded="false">
+        <div class="robot-trigger-halo" aria-hidden="true"></div>
+        <img src="public/visuals/robot_launcher.png" alt="MintX AI 3D Robot Assistant" class="robot-trigger-avatar" id="robotTriggerAvatar" width="192" height="192">
       </button>
 
       <!-- Chat Window -->
@@ -616,11 +626,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
+    // Speech Bubble Popup Elements & Handlers
+    const speechBubble = document.getElementById('chatbotSpeechBubble');
+    const bubbleClose = document.getElementById('chatbotBubbleClose');
+    const bubbleText = document.getElementById('chatbotBubbleText');
+    let isBubbleDismissed = false;
+
+    // Show popup automatically on page load after subtle 650ms delay
+    setTimeout(() => {
+      if (!isBubbleDismissed && speechBubble && !chatWindow.classList.contains('open')) {
+        speechBubble.classList.add('is-visible');
+      }
+    }, 650);
+
+    // Dismiss only the speech bubble when user clicks (×); robot remains visible
+    if (bubbleClose) {
+      bubbleClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isBubbleDismissed = true;
+        if (speechBubble) speechBubble.classList.remove('is-visible');
+      });
+    }
+
+    // Clicking the speech bubble opens the chatbot
+    if (speechBubble) {
+      speechBubble.addEventListener('click', (e) => {
+        if (e.target.closest('#chatbotBubbleClose')) return;
+        openChat();
+      });
+    }
+
     // Window Open/Close Trigger handlers
     const openChat = () => {
-      chatWindow.classList.add('open'); if (window.bindMintXRobotMotion) window.bindMintXRobotMotion();
+      chatWindow.classList.add('open');
+      if (window.bindMintXRobotMotion) window.bindMintXRobotMotion();
       triggerBtn.classList.add('active');
       triggerBtn.setAttribute('aria-expanded', 'true');
+      if (speechBubble) speechBubble.classList.remove('is-visible');
       setRobotState('idle');
       setTimeout(() => chatInput.focus(), 300);
     };
@@ -630,6 +672,14 @@ document.addEventListener('DOMContentLoaded', () => {
       triggerBtn.classList.remove('active');
       triggerBtn.setAttribute('aria-expanded', 'false');
       setRobotState('idle');
+      // If user had not explicitly closed bubble, gently show it again after chat closes
+      if (!isBubbleDismissed && speechBubble) {
+        setTimeout(() => {
+          if (!chatWindow.classList.contains('open') && !isBubbleDismissed) {
+            speechBubble.classList.add('is-visible');
+          }
+        }, 600);
+      }
     };
 
     triggerBtn.addEventListener('click', () => {

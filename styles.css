@@ -2728,92 +2728,234 @@ button, input, textarea, select {
    ========================================================= */
 .mintx-chatbot-root {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 22px;
   z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
 }
 
-/* 1. Floating Launch Button */
-.chatbot-trigger-btn {
-  width: 60px;
-  height: 60px;
+/* 1. Floating Speech Bubble Popup ("How can I help you?") */
+.chatbot-speech-bubble {
+  position: relative;
+  margin-bottom: 12px;
+  margin-right: 4px;
+  background: #ffffff;
+  border: 1.5px solid #CFE2F7;
+  border-radius: 16px;
+  padding: 11px 18px 11px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 
+    0 10px 28px -4px rgba(56, 189, 248, 0.25),
+    0 3px 10px -2px rgba(15, 23, 42, 0.05);
+  opacity: 0;
+  transform: translateY(12px) scale(0.92);
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  cursor: pointer;
+  user-select: none;
+  animation: speechBubbleGentleHover 3.4s ease-in-out infinite alternate;
+  z-index: 1001;
+}
+
+.chatbot-speech-bubble.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.chatbot-speech-bubble:hover {
+  border-color: #B9D6F5;
+  box-shadow: 
+    0 14px 34px -4px rgba(56, 189, 248, 0.35),
+    0 4px 12px -2px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes speechBubbleGentleHover {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-4px); }
+}
+
+.chatbot-bubble-text {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: #0F1F38;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.chatbot-bubble-close {
+  background: transparent;
+  border: none;
+  color: #8CA0BA;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0AAE9E 0%, #088F82 100%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 10px 28px -4px rgba(10, 174, 158, 0.45), 0 4px 12px rgba(15, 23, 42, 0.15);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin-left: 2px;
   outline: none;
-  animation: triggerBtnHovering 3.2s ease-in-out infinite;
 }
 
-@keyframes triggerBtnHovering {
+.chatbot-bubble-close:hover {
+  color: #0F1F38;
+  background: rgba(140, 160, 186, 0.16);
+  transform: scale(1.1);
+}
+
+/* Speech Bubble Tail pointing down towards the robot */
+.chatbot-bubble-tail {
+  position: absolute;
+  bottom: -9px;
+  right: 36px;
+  width: 16px;
+  height: 9px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.chatbot-bubble-tail::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-right: 1.5px solid #CFE2F7;
+  border-bottom: 1.5px solid #CFE2F7;
+  transform: rotate(45deg);
+  box-shadow: 2px 2px 4px rgba(56, 189, 248, 0.12);
+}
+
+/* 2. Floating 3D Robot Launcher Button */
+.chatbot-robot-trigger {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: robotTriggerEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  z-index: 1000;
+}
+
+@keyframes robotTriggerEntrance {
+  0% { opacity: 0; transform: scale(0.6) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Pale Blue & White Glowing Halo Ring */
+.robot-trigger-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 248, 255, 0.95) 0%, rgba(215, 238, 255, 0.6) 65%, rgba(186, 225, 255, 0.2) 85%, transparent 100%);
+  box-shadow: 
+    0 10px 30px -4px rgba(56, 189, 248, 0.42),
+    0 0 0 1.5px rgba(200, 230, 255, 0.8),
+    inset 0 0 16px rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  animation: haloBreathPulse 3.4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes haloBreathPulse {
   0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 10px 28px -4px rgba(10, 174, 158, 0.45), 0 4px 12px rgba(15, 23, 42, 0.15);
+    box-shadow: 
+      0 10px 30px -4px rgba(56, 189, 248, 0.42),
+      0 0 0 1.5px rgba(200, 230, 255, 0.8),
+      inset 0 0 16px rgba(255, 255, 255, 0.9);
+    transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 36px -4px rgba(10, 174, 158, 0.65), 0 8px 18px rgba(15, 23, 42, 0.25);
+    box-shadow: 
+      0 14px 38px -2px rgba(56, 189, 248, 0.62),
+      0 0 0 2.5px rgba(56, 189, 248, 0.7),
+      inset 0 0 20px rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
 
-.chatbot-trigger-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 14px 34px -4px rgba(10, 174, 158, 0.55), 0 6px 16px rgba(15, 23, 42, 0.2);
-}
-
-.chatbot-trigger-btn:active {
-  transform: scale(0.96);
-}
-
-.chatbot-trigger-icon {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.chatbot-trigger-btn.active .chatbot-trigger-icon {
-  transform: rotate(90deg) scale(0.9);
-}
-
-/* Tooltip Badge */
-.chatbot-tooltip {
-  position: absolute;
-  right: 72px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #101A30;
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  white-space: nowrap;
+/* 3D Robot Image Avatar with Continuous Smooth Living Motion */
+.robot-trigger-avatar {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s ease;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.12));
+  animation: robotTriggerHoverFloat 3.4s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
 }
 
-.chatbot-trigger-btn:hover .chatbot-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(-4px);
+@keyframes robotTriggerHoverFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1.2deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+
+.chatbot-robot-trigger:hover .robot-trigger-avatar {
+  transform: translateY(-7px) scale(1.06) rotate(-2deg);
+  filter: drop-shadow(0 10px 22px rgba(56, 189, 248, 0.32));
+}
+
+.chatbot-robot-trigger:hover .robot-trigger-halo {
+  box-shadow: 
+    0 16px 44px -2px rgba(56, 189, 248, 0.65),
+    0 0 0 2.5px rgba(56, 189, 248, 0.85);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.chatbot-robot-trigger:active .robot-trigger-avatar {
+  transform: scale(0.94);
+}
+
+.chatbot-robot-trigger.active .robot-trigger-halo {
+  border-color: #00D2B4;
+  box-shadow: 0 0 20px rgba(0, 210, 180, 0.6);
 }
 
 /* 2. Chat Window UI & Exact Reference Layout */
 .chatbot-window {
   position: absolute;
-  bottom: 74px;
+  bottom: 104px;
   right: 0;
   width: 442px;
   height: 690px;
